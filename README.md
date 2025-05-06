@@ -8,9 +8,9 @@
 ## 起動
 
 ```bash
-npm install
+pnpm install
 npx prisma generate
 npx prisma db push
 node prisma/seed.mjs
-npm run dev
+pnpm run dev
 ```

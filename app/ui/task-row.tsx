@@ -1,4 +1,4 @@
-import { Task } from "@prisma/client";
+import { Task } from "@/app/generated/prisma";
 import DeleteButton from "./delete-button";
 import EditButton from "./edit-button";
 import { FaRegCircle } from "react-icons/fa";
