@@ -65,18 +65,29 @@ export function AlertDialog({
   }, [isDialogOpen]);
 
   return (
-    <dialog ref={dialogRef} onKeyDown={handleKeyDown} className={className}>
+    <dialog
+      ref={dialogRef}
+      onKeyDown={handleKeyDown}
+      className={className + " m-auto"}
+    >
       {children}
       <footer className="flex flex-row">
         {buttons?.map((button, index) => (
           <button
             key={`${index}`}
-            onClick={() => handleCloseDialogByButton(index)}>
+            onClick={() => handleCloseDialogByButton(index)}
+            className="focus:outline-none focus:ring-0"
+          >
             {button}
           </button>
         ))}
         {hasCloseButton && (
-          <button onClick={handleCloseDialog}>{closeButton}</button>
+          <button
+            onClick={handleCloseDialog}
+            className="focus:outline-none focus:ring-0"
+          >
+            {closeButton}
+          </button>
         )}
       </footer>
     </dialog>

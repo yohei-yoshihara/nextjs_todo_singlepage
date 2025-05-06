@@ -29,7 +29,7 @@ export default function ModalDialog({ isOpen, children, className }: Props) {
   }, [isDialogOpen]);
 
   return (
-    <dialog ref={dialogRef} className={className}>
+    <dialog ref={dialogRef} className={className + " m-auto"}>
       {children}
     </dialog>
   );
