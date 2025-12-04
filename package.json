@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.17.0",
-    "next": "15.5.4",
+    "next": "15.5.7",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-icons": "^5.5.0",
@@ -29,6 +29,12 @@
     "overrides": {
       "@types/react": "19.2.2",
       "@types/react-dom": "19.2.1"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "prisma",
+      "sharp"
+    ]
   }
 }
