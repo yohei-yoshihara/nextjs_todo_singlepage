@@ -5,7 +5,7 @@ import Form from "next/form";
 import ModalDialog from "./modal-dialog";
 import { MdEdit } from "react-icons/md";
 import { Task } from "@/app/generated/prisma";
-import { updateTask, TaskState } from "../lib/actions";
+import { updateTask, TaskState } from "@/lib/actions";
 import { MdErrorOutline } from "react-icons/md";
 import TextField from "./text-field";
 import Checkbox from "./checkbox";

@@ -8,9 +8,10 @@
 ## 起動
 
 ```bash
+cd nextjs_todo_singlepage
 pnpm install
-npx prisma generate
-npx prisma db push
-node prisma/seed.mjs
+pnpm dlx prisma generate
+pnpm dlx prisma db push
+pnpm dlx tsx seed.ts
 pnpm run dev
 ```

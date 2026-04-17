@@ -1,12 +1,10 @@
-import { PrismaClient } from "../app/generated/prisma/index.js";
-
-const db = new PrismaClient();
+import { prisma } from "./lib/prisma";
 
 async function main() {
-  await db.task.deleteMany();
+  await prisma.task.deleteMany();
 
   for (let i = 0; i < 20; i++) {
-    await db.task.create({
+    await prisma.task.create({
       data: {
         title: `Task ${i}`,
         description: `This is Task ${i}'s description.`,

@@ -2,7 +2,7 @@
 
 import { ReactNode, useState, useTransition } from "react";
 import AlertDialog from "./alert-dialog";
-import { deleteTask } from "../lib/actions";
+import { deleteTask } from "@/lib/actions";
 import { MdDelete } from "react-icons/md";
 import { useToast } from "./toast";
 

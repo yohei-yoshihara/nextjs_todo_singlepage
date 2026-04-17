@@ -2,7 +2,7 @@
 // import TaskRow from "@/app/ui/task-row";
 import CreateButton from "@/app/ui/create-button";
 import TaskTable from "../ui/task-table";
-import { getTasksPages } from "../lib/actions";
+import { getTasksPages } from "@/lib/actions";
 import Pagination from "../ui/pagination";
 import SearchBar from "../ui/searchbar";
 

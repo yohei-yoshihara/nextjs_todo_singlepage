@@ -2,7 +2,7 @@
 
 // タスクのためのサーバーアクション
 
-import db from "@/app/lib/db";
+import { prisma } from "@/lib/prisma";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 
@@ -47,7 +47,7 @@ export async function createTask(
   const { title, description, completed } = validatedFields.data;
 
   try {
-    await db.task.create({
+    await prisma.task.create({
       data: {
         title,
         description,
@@ -94,7 +94,7 @@ export async function updateTask(
   const { title, description, completed } = validatedFields.data;
 
   try {
-    await db.task.update({
+    await prisma.task.update({
       where: {
         id,
       },
@@ -115,7 +115,7 @@ export async function updateTask(
 
 export async function deleteTask(id: number) {
   try {
-    await db.task.delete({
+    await prisma.task.delete({
       where: {
         id,
       },
@@ -129,12 +129,12 @@ export async function deleteTask(id: number) {
 }
 
 export async function getTasks() {
-  const tasks = await db.task.findMany();
+  const tasks = await prisma.task.findMany();
   return tasks;
 }
 
 export async function getTask(taskId: number) {
-  const task = await db.task.findUnique({ where: { id: taskId } });
+  const task = await prisma.task.findUnique({ where: { id: taskId } });
   return task;
 }
 
@@ -142,7 +142,7 @@ const ITEMS_PER_PAGE = 6;
 
 export async function getFilteredTasks(query: string, currentPage: number) {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
-  const tasks = await db.task.findMany({
+  const tasks = await prisma.task.findMany({
     skip: offset,
     take: ITEMS_PER_PAGE,
     where: {
@@ -158,7 +158,7 @@ export async function getFilteredTasks(query: string, currentPage: number) {
 }
 
 export async function getTasksPages(query: string) {
-  const count = await db.task.count({
+  const count = await prisma.task.count({
     where: {
       title: {
         contains: query,

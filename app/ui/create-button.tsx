@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { createTask, TaskState } from "../lib/actions";
+import { createTask, TaskState } from "@/lib/actions";
 import ModalDialog from "./modal-dialog";
 import Form from "next/form";
 import { MdErrorOutline } from "react-icons/md";

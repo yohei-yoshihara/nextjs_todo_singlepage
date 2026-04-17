@@ -1,4 +1,4 @@
-import { getFilteredTasks } from "@/app/lib/actions";
+import { getFilteredTasks } from "@/lib/actions";
 import TaskRow from "@/app/ui/task-row";
 
 type Props = {
